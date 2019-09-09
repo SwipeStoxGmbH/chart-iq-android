@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+            <title>CharIQ</title>
+            
+            <meta name="apple-mobile-web-app-capable" content="yes">
+                <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge"/> <!-- some versions of IE11 do not render correctly without this -->
+                    
+                    <!-- Sample css file may be customized -->
+                    <link rel="stylesheet" type="text/css" href="stx-standard.css" media="screen"/>
+                    <link rel="stylesheet" type="text/css" href="stx-chart.css" media="screen"/>
+                    <link rel="stylesheet" type="text/css" href="stx-phone.css?2" media="screen"/>
+                    <script type="text/javascript"  src="stxThirdParty.js"></script>
+                    <script type="text/javascript"  src="stx.js"></script>
+                    <script type="text/javascript"  src="stxKernelOs.js?1"></script>
+                    <script type="text/javascript" src="stxLibrary.js"></script>
+                    <script type="text/javascript" src="chartiq.js"></script>
+                    <script type="text/javascript" src="translations.js"></script>
+                    
+                    <style>
+                        .chartContainer.noAxis {
+                            border: none !important;
+                        }
+                    .chartContainer .stx-holder.stx-panel-chart {
+                        display: none !important;
+                    }
+                    .chartContainer {
+                        border: none !important;
+                    }
+                    </style>
+    </head>
+    <body bgcolor="#F6F6F6">
+        <div class="chartContainer noAxis" style="position:relative; height: 100%"></div>
+        
+        <div class="stx-dialog-container">
+            
+            <div id="studyDialog" style="display:none;" class="stx-dialog">
+                <h4 class="title"></h4>
+                <div onClick="STX.DialogManager.dismissDialog()" class="stx-btn stx-ico stx-ico-close"><span class="stx-ico-close"></span></div>
+                <div id="inputs">
+                    <div class="inputTemplate" style="display:none">
+                        <div class="stx-heading"></div>
+                        <div class="stx-data"></div>
+                    </div>
+                </div>
+                <div id="outputs">
+                    <hr/>
+                    <div class="outputTemplate" style="display:none">
+                        <div class="stx-heading"></div>
+                        <div class="stx-color"><span></span></div>
+                    </div>
+                </div>
+                <div id="parameters"></div>
+                <div onClick="createStudy();STX.DialogManager.dismissDialog()" class="stx-btn">Create</div>
+                
+                <div id="studyOverZones" style="display:none">Show Zones<input id="studyOverZonesEnabled" type="checkbox" class="stx-input-check">
+                    <div class="outputTemplate">
+                        <div class="stx-heading">OverBought</div>
+                        <div class="stx-data">
+                            <input id="studyOverBoughtValue" type="text" style="width:18px;" class="stx-input-field">
+                                <div class="stx-color" id="studyOverBoughtColor"><span></span></div>
+                                </div>
+                    </div>
+                    <div class="outputTemplate">
+                        <div class="stx-heading">OverSold</div>
+                        <div class="stx-data">
+                            <input id="studyOverSoldValue" type="text" style="width:18px;" class="stx-input-field">
+                                <div class="stx-color" id="studyOverSoldColor"><span></span></div>
+                                </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </body>
+</html>
+
